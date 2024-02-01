@@ -18,6 +18,27 @@ if (true){
      num=10 //here num is the global variable
      //let num=20  //here num is the local variable
      //we can use same variable name in both scope at a time
-     console.log(num)
+     //console.log(num)
 }
-console.log(num)
+//console.log(num)
+
+function one(){
+    const username="Abinash"
+    function two(){
+        const website="youtube"
+        console.log(username)
+    }
+    two()
+    //console.log(website)
+}
+one()
+
+addOne(5)
+function addOne(num){
+    return num+1
+}
+
+//addTwo(5) //we can't call a function declared with const before initialzing it - hoisting
+const addTwo = function(num){
+    return num+2
+}
