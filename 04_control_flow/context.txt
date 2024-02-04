@@ -1,0 +1,8 @@
+1. Javascript execution context:
+  -Global execution context(this)
+  -Function execution context
+  -Eval execution context(optional)
+
+2. Javascript execution phase
+  -Memory creation phase
+  -Execution phase
