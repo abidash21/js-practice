@@ -28,9 +28,53 @@
     // clientX, clientY, screenX, screenY
     // altkey, ctrlkey, shiftkey, keyCode
 
-    document.getElementById("owl").addEventListener('click',()=> {
-        alert("owl clicked")
+
+
+    //addEventListener has one more prop called Event Propagation,default value is false
+    //if it is false for both - event Bubbling (flow is from inside to outside)
+    //if it is true for both - event Capturing (flow is from outside to inside)
+    //if one of them is true - that event priority more
+
+    /*
+    document.getElementById("images").addEventListener('click',(e)=> {
+        console.log("clicked inside ul")
+    },false)
+    document.getElementById("owl").addEventListener('click',(e)=> {
+        console.log("owl clicked")
+        e.stopPropagation()
+    },false)
+    document.getElementById("google").addEventListener('click',(e)=> {
+        console.log("google clicked")
+        e.preventDefault()
+    },false)
+    */
+    
+    document.querySelector('#images').addEventListener('click',(e) => {
+        console.log(e.target.tagname)
+        if (e.target.tagname === 'IMG'){
+        let removeIt=e.target.parentNode
+        //removeIt.remove()
+        removeIt.parentNode.removeChild(removeIt)
+        }
     })
+
+    // Types of events -
+    /*
+    1. Mouse Events - click,mouseover,mouseout,mousemove
+    2. Keyboard Events - keydown,keyup,keypress
+    3. Form Events - submit,change
+    4. Window Events - load,resize,scroll
+    */
+
+    // timestamp - 
+    /*
+       const time = document.getElementById("time");
+       const localTime = new Date(event.timeStamp);
+       const formattedTime = localTime.toLocaleString();
+       time.firstChild.nodeValue = formattedTime;
+    */
+
+    //
     
 </script>
 </html>
